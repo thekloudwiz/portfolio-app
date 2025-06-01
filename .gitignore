@@ -17,4 +17,4 @@ node_modules/
 Thumbs.db
 
 # Ignore buildspec.yml
-buildspec.yml
+buildspec.yaml
