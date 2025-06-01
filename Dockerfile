@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:22 AS builder
+FROM node:24-slim AS builder
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -14,7 +14,7 @@ RUN npm install npm-force-resolutions --save-dev
 COPY . .
 
 # Stage 2: Run the application
-FROM node:22-alpine
+FROM node:23-alpine
 
 # Set the working directory
 WORKDIR /usr/src/app
