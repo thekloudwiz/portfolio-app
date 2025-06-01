@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - docker push 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest
-      - printf '[{"name":"nodejs-app","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"portfolio","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: 
     - imagedefinitions.json
