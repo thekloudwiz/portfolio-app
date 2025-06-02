@@ -17,7 +17,6 @@ phases:
       
   post_build:
     commands:
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
       - docker push $REPOSITORY_URI:latest
       - printf '[{"name":"portfolio","imageUri":"%s"}]' 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest > imagedefinitions.json
       - echo "Container name is $CONTAINER_NAME"
