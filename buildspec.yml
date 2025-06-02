@@ -22,6 +22,7 @@ phases:
       - printf '[{"name":"portfolio","imageUri":"%s"}]' 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest > imagedefinitions.json
       - echo "Container name is $CONTAINER_NAME"
       - cat imagedefinitions.json
+      - cat taskdef.json
 artifacts:
   files: 
     - imagedefinitions.json
