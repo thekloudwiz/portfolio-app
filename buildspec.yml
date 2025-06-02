@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - docker push 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest
-      - printf '[{"name":"portfolio","imageUri":"%s"}]' $CONTAINER_NAME 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest > imagedefinitions.json
+      - printf '[{"name":"portfolio","imageUri":"%s"}]' 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest > imagedefinitions.json
       - echo "Container name is $CONTAINER_NAME"
 artifacts:
   files: 
