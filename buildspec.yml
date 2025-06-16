@@ -4,17 +4,17 @@ phases:
   pre_build:
     commands:
       - aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 288761729262.dkr.ecr.eu-central-1.amazonaws.com
-      - aws ecs describe-task-definition --task-definition portfolio-task --query taskDefinition > taskdef.json
+      - aws ecs describe-task-definition --task-definition geek-task-family --query taskDefinition > taskdef.json
       # - sed -i -e "s|<IMAGE>|$REPOSITORY_URI:$IMAGE_TAG|g" taskdef.json
   
   build:
     commands:
-      - docker build -t 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest .
+      - docker build -t 288761729262.dkr.ecr.eu-central-1.amazonaws.com/geek-ecr:latest .
       
   post_build:
     commands:
-      - docker push 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest
-      - printf '[{"name":"portfolio","imageUri":"%s"}]' 288761729262.dkr.ecr.eu-central-1.amazonaws.com/portfolio-app:latest > imagedefinitions.json
+      - docker push 288761729262.dkr.ecr.eu-central-1.amazonaws.com/geek-ecr:latest
+      - printf '[{"name":"portfolio","imageUri":"%s"}]' 288761729262.dkr.ecr.eu-central-1.amazonaws.com/geek-ecr:latest > imagedefinitions.json
 
 artifacts:
   files: 
