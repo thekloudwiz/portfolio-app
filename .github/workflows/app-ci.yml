@@ -106,7 +106,7 @@ jobs:
           aws-region: eu-west-1
 
       - name: Upload Security Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: security-reports
           path: |
@@ -180,7 +180,7 @@ jobs:
             --output text
 
       - name: Upload Image Tag
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: image-tag
           path: image-tag.txt
@@ -206,7 +206,7 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: Upload Trivy Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: trivy-results
           path: trivy-results.json
